@@ -8,17 +8,11 @@ class App extends Component {
 
   constructor(props, context) {
     super(props, context);
-
-
-
-
     this.state = {
-      mainContent: [],
-      title:'A'
+      title:'',
+      description:''
     };
-
     this.getFacebookContent = this.getFacebookContent.bind(this);
-
   }
   componentDidMount() {
     this.getFacebookContent();
@@ -27,14 +21,17 @@ class App extends Component {
   getFacebookContent() {
     let self = this;
     let parser = new Parser();
-    this.state.title ="XXXXX";
     parser.parseURL('http://nullmicgo.com/lunchtime/server.php')
     .then(feed => {
+
+
+
         feed.items.forEach(function(entry) {
-          console.log(entry.title);
-
-          this.setState({ title: entry.title });
-
+               console.log(entry);
+              if((self.state.title == '')&&(entry.title.includes("是日午餐"))){
+                     self.setState({ title: entry.title });
+                     self.setState({ description: entry.content });
+              }
         });
     });
 
@@ -52,10 +49,15 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">{ this.state.title }</h1>
         </header>
         <p className="App-intro">
-           { this.state.title }
+
+
+       <div dangerouslySetInnerHTML={{__html: this.state.description}} />
+
+
+
         </p>
       </div>
     );
