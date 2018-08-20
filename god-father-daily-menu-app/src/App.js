@@ -3,7 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 import Parser from 'rss-parser';
 
-
 class App extends Component {
 
   constructor(props, context) {
@@ -52,7 +51,6 @@ class App extends Component {
           <h1 className="App-title">{ this.state.title }</h1>
         </header>
         <p className="App-intro">
-
 
        <div dangerouslySetInnerHTML={{__html: this.state.description}} />
 
