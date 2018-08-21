@@ -1,6 +1,5 @@
-# god-father-daily-menu
-god-father-daily-menu
-
+# 半島冰室是日午餐
+半島冰室是日午餐
 
 Demo LINK:
 http://nullmicgo.com/father/
