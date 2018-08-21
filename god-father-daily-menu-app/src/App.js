@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Parser from 'rss-parser';
+import {Animated} from "react-animated-css";
 
 class App extends Component {
 
@@ -42,20 +43,25 @@ class App extends Component {
     //    console.log('test >'+form);
     //    return 'asdasdasd';
     // }); 
-  
+    var sectionStyle = {
+      backgroundImage: "url(pattern.png)"
+    };
 
     return (
       <div className="App">
-        <header className="App-header">
-          <img src='store.png' className="App-logo" alt="logo" />
+        <header className="App-header" style={ sectionStyle } >
+          <Animated animationIn="bounceIn" animationOut="fadeOut" isVisible={true}>
+              <img src='store.png' className="App-logo" alt="logo" with="200" />
+          </Animated>
+
+
           <h1 className="App-title">{ this.state.title }</h1>
         </header>
         <p className="App-intro">
+          <Animated animationIn="bounceIn" animationOut="fadeOut" isVisible={true}>
+              <div dangerouslySetInnerHTML={{__html: this.state.description}} />
 
-       <div dangerouslySetInnerHTML={{__html: this.state.description}} />
-
-
-
+          </Animated>
         </p>
       </div>
     );
