@@ -62,13 +62,32 @@ class App extends Component {
 
           <h1 className="App-title">{ this.state.title }</h1>
         </header>
+
+
+
+
+        <p>
+          <h1>半島冰室</h1>
+        </p>
         <p className="App-intro">
           <Animated animationIn="bounceIn" animationOut="fadeOut" isVisible={true}>
               <div dangerouslySetInnerHTML={{__html: this.state.description}} />
 
           </Animated>
         </p>
+
+        <p className="store_b">
+            <h1>大澳德發</h1>
+            <br/>
+              <Animated animationIn="bounceIn" animationOut="fadeOut" isVisible={true}>
+              <img src="https://dyn.web.whatsapp.com/pp?e=https%3A%2F%2Fpps.whatsapp.net%2Fv%2Ft61.11540-24%2F39357607_191386494950728_8903738479037382656_n.jpg%3Foe%3D5B7F8809%26oh%3Dec89443a4d3809d310b23542d05aea9c&t=l&u=85265146779%40c.us&i=1534757793"></img>
+              </Animated>
+        </p>
+
+
+
       </div>
+
     );
   }
 }
