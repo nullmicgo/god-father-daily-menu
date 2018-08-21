@@ -29,8 +29,13 @@ class App extends Component {
         feed.items.forEach(function(entry) {
                console.log(entry);
               if((self.state.title == '')&&(entry.title.includes("是日午餐"))){
+
+                  let content = entry.content;
+                  content = content.replace("img", "img  id='johnson_image' ");
+
+
                      self.setState({ title: entry.title });
-                     self.setState({ description: entry.content });
+                     self.setState({ description: content });
               }
         });
     });
