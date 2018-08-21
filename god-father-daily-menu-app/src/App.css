@@ -26,8 +26,11 @@
   to { transform: rotate(360deg); }
 }
 
+@media (min-width: 768px) {
 
+}
 
 .App-intro img{
   width: 100%;
+  max-width: 700px;
 }
